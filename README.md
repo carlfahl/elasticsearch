@@ -20,9 +20,28 @@ AWS has a free tier offering for Elasticsearch.
 
 ### Using the RESTful API
 
-Elasticsearch API endpoints for indexing (POST) and getting (GET) data are
+#### Posting and Getting data
+
+Elasticsearch API endpoints for insert/indexing (POST) and getting (GET) data are
 of the format:
 
 ```
 /<index>/<type>/<id>
 ```
+
+This will create entries with variables "_index", "_type", "_id" with values
+corresponding to the
+
+#### Searching for data
+
+Methods can be added to the URI to preform operations like searching.
+These methods start with an underscore.
+
+To search:
+
+```
+GET /<index>/<type>/_search
+```
+
+must - like logical AND
+should - like logical OR
